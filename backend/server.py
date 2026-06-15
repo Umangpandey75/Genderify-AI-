@@ -11,8 +11,8 @@ app = Flask(__name__)
 # Enable CORS for the React development frontend on port 5173 (or any origin)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Define the absolute model path
-MODEL_PATH = r"a:\project\maleVSfemale_classication-main\maleVSfemale_classication-main\new_maleVSfemaleClassification.h5"
+# Define the model path relative to the server script location
+MODEL_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "new_maleVSfemaleClassification.h5"))
 
 print("Loading model from:", MODEL_PATH)
 try:

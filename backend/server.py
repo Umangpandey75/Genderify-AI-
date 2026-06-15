@@ -14,6 +14,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 # Define the model path relative to the server script location
 MODEL_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "new_maleVSfemaleClassification.h5"))
 
+load_error = None
 print("Loading model from:", MODEL_PATH)
 try:
     model = load_model(MODEL_PATH)
@@ -21,10 +22,15 @@ try:
 except Exception as e:
     print("Error loading model:", str(e))
     model = None
+    load_error = str(e)
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "healthy", "model_loaded": model is not None})
+    return jsonify({
+        "status": "healthy", 
+        "model_loaded": model is not None,
+        "error": load_error
+    })
 
 @app.route("/predict", methods=["POST"])
 def predict():

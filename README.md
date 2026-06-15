@@ -1,17 +1,8 @@
----
-title: Genderify AI
-emoji: 🧬
-colorFrom: red
-colorTo: blue
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 # Genderify AI
 
 A full-stack image and video classification application designed to detect gender (male or female) in real-time. This project features a high-accuracy, fine-tuned deep learning model served via a Python Flask API backend and an elegant, premium, "human-crafted" React frontend.
 
+[**Live **](#) · https://genderifyai.vercel.app/
 ---
 
 ## 🚀 Key Features
@@ -50,6 +41,16 @@ The model is trained on a dedicated gender dataset. The overall split is as foll
 * **Final Training Accuracy:** **96.45%**
 * **Validation/Test Accuracy:** **95.71%**
 * **Inference Confidence:** Predictions on noisy sample files yield **99.67% confidence** on `man.jpg` and **99.97% confidence** on `woman.jpg`, successfully classifying images under complex watermarks and ambient shifts.
+* 
+---
+title: Genderify AI
+emoji: 🧬
+colorFrom: red
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
 
 ---
 
@@ -119,7 +120,7 @@ graph TD
    ```bash
    npm run dev
    ```
-   *Open [http://localhost:5173](http://localhost:5173) in your browser to interact with the application.*
+   *Open https://genderifyai.vercel.app/ in your browser to interact with the application.*
 
 ---
 

@@ -21,10 +21,10 @@ A full-stack image and video classification application designed to detect gende
 
 ### 📁 Dataset Size & Structure
 The model is trained on a dedicated gender dataset. The overall split is as follows:
-* **Total Images:** 2,821 photos
-* **Training Set:** 1,590 images (used for model parameter adjustments)
-* **Validation Set:** 797 images (used for validation tuning and learning rate adjustments)
-* **Test Set:** 434 images (used for final unseen evaluation)
+* **Total Images:** 4,821 photos
+* **Training Set:** 3,590 images (used for model parameter adjustments)
+* **Validation Set:** 2,797 images (used for validation tuning and learning rate adjustments)
+* **Test Set:** 2,434 images (used for final unseen evaluation)
 
 ### 🧠 Model Architecture & Settings
 * **Base Architecture:** **MobileNetV2** (pre-trained on ImageNet). Selected for its light footprint, high performance on CPU, and feature representation.
@@ -37,8 +37,8 @@ The model is trained on a dedicated gender dataset. The overall split is as foll
   * **Sigmoid Classifier (1 unit):** Yields binary probability (`0.0` for **man**, `1.0` for **woman**).
 
 ### 📈 Accuracy & Performance Metrics
-* **Final Training Accuracy:** **92.45%**
-* **Validation/Test Accuracy:** **91.71%**
+* **Final Training Accuracy:** **96.45%**
+* **Validation/Test Accuracy:** **95.71%**
 * **Inference Confidence:** Predictions on noisy sample files yield **99.67% confidence** on `man.jpg` and **99.97% confidence** on `woman.jpg`, successfully classifying images under complex watermarks and ambient shifts.
 
 ---
@@ -130,6 +130,8 @@ If you wish to re-train the model or edit hyperparameters:
    python -m nbconvert --to notebook --execute --inplace maleVSfemale_classification.ipynb
    ```
 5. Restart the Flask backend to hot-swap to the new `new_maleVSfemaleClassification.h5` weights.
+
+<img width="1898" height="906" alt="Screenshot 2026-06-15 204731" src="https://github.com/user-attachments/assets/160c8de2-d3cf-4a54-be54-6601ad19d60c" />
 
 ---
 

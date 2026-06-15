@@ -1,3 +1,13 @@
+---
+title: Genderify AI
+emoji: 🧬
+colorFrom: red
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Genderify AI
 
 A full-stack image and video classification application designed to detect gender (male or female) in real-time. This project features a high-accuracy, fine-tuned deep learning model served via a Python Flask API backend and an elegant, premium, "human-crafted" React frontend.

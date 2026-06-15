@@ -24,6 +24,14 @@ except Exception as e:
     model = None
     load_error = str(e)
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Welcome to the Genderify AI Classification API!",
+        "health_check": "/health",
+        "predict_endpoint": "/predict"
+    })
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({

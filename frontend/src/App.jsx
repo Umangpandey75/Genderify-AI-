@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 function App() {
   const [mode, setMode] = useState("camera"); // "camera" | "upload"
   const [selectedFile, setSelectedFile] = useState(null);
@@ -99,7 +101,7 @@ function App() {
     formData.append("file", fileBlob, "capture.jpg");
 
     try {
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch(`${API_BASE_URL}/predict`, {
         method: "POST",
         body: formData
       });
